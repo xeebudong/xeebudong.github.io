@@ -70,7 +70,7 @@ ba_domain: auto
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "用脚丈量过的，才是旅程 <br>听些故事，喝点清酒 <br>再把他们写在每一个清晨日暮"
+sidebar-about-description: "用脚丈量过的，才是旅程 <br>听听过去 <br>说说未来 <br>在当下开花"
 sidebar-avatar: /img/avatar-weitu.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
