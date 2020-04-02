@@ -26,6 +26,7 @@ tags:
 > 我们这里只讨论单个变量的空值检验，Python中，Pandas对象有针对整个对象的所有cell的空值检验函数，.isnull(), .isnull().any(), .isnull().all()
 
 1. 字符串的空值检验
+
 ```
 string1 = ""
 string2 = " "
