@@ -1,0 +1,17 @@
+---
+layout:     post
+title:      "一文讲透空值及Python空值检验"
+subtitle:   "\"coding dayday\""
+date:       2020-04-2 20:00:00
+author:     "Weitu"
+header-img: "img/for-blog/null_value.jpg"
+catalog: true
+tags:
+    - Python
+
+---
+
+## 一、什么是空值
+## 二、空值检验(使用Python)
+## 三、空值处理(使用Python)
+## 四、总结
