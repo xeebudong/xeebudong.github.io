@@ -35,10 +35,13 @@ for i in range(3): # 换行
     exec('print(dynamic_var_{})'.format(i))
 for i in range(3): # 不换行
     exec('print(dynamic_var_{}, end=" ")'.format(i))
+
 ```
 
 2. 命名空间动态赋值
+
 > 在Python的命名空间中，将变量名与值存储在字典中，可以通过locals()，globals()函数分别获取局部命名空间和全局命名空间。
+
 ```
 dynamic_vars = locals()
 # 1. 定义变量并赋值
@@ -60,6 +63,7 @@ for i in range(3):
 ## 三、排列组合
 
 1. 在一个列表里面排列组合，可以使用python的内置包 itertools
+
 ```
 from itertools import combinations, permutations
 
@@ -73,13 +77,13 @@ print(list(permutations(lst, 3)))
 - 事先不知道每一层for，上下界及步长
 
 > 好吧，码了很多代码，最后还是不敌python的一条语句，可以使用官方函数完美解决，即计算list的笛卡尔积 【人生苦短，我用Python】
+
 ```
 from itertools import product
 
 print(len(list(product(["A1","A2","A3"],["B1","B2","B3"], ["C1", "C2"]))))
 print(list(product(["A1","A2","A3"],["B1","B2","B3"], ["C1", "C2"])))
 ```
-
 
 ## 四、总结
 
