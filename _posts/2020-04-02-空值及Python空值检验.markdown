@@ -17,9 +17,11 @@ tags:
 
 在我们的工作中，我们可以接触到各种各样空值的表示方法：
 - 字符型 ""
+
 - 数字型 None\np.nan\np.NaN\np.NAN
 > np.nan, represent of Not a Number, np.NaN and np.NAN are equivalent definitions of np.nan
-- 时间类型 Nat
+
+- 时间类型 Nat， Not a Time
 
 
 ## 二、空值检验(使用Python)
@@ -44,11 +46,26 @@ print(string2 == "") # False
 3. 时间的空值检验
 - isnat Test element-wise for NaT (not a time) and return result as a boolean array
 
-
-
+```
+import numpy as np
+print(np.isnan(np.nan))               # True
+print(np.isnat(np.datetime64("NaT"))) # True
+print(np.isnan(np.datetime64("NaT"))) # raise TypeError
+```
 
 ## 三、空值处理(使用Python)
+
+1. 单元素，直接赋值
+2. python对象，如pandas，适用fillna、replace、dropna等函数
+3. fillna函数可以使用前向填充、后项填充、均值填充等
+
 ## 四、总结
+
+在空值方面，需要了解：
+1. 空值的类型：字符型、数字型、时间型， 不同类型的空值，适用不同的空值检验函数
+2. 单元素的空值检验，一般用numpy的函数、==、is等
+3. pandas对象或python其他对象中的空值检验，一般各自类库里面都有对应函数，如pandas的pd.isnull()、pd.notnull()
+
 
 ## 番外
 > == vs is 在python中的区别
@@ -58,8 +75,11 @@ print(string2 == "") # False
 
 | 相同 |  差异 | 例举 |
 | ------ | ------ | ------ |
-|都是对对象进行比较判断作用的|对象比较判断的内容并不相同<br/>==是python标准操作符中的比较操作符，用来比较判断两个对象的value是否一致<br/> is也叫同一性运算符，用于判断对象的id是否相同<br/>is的相同的标准是更严苛的|x=y=1<br/>z=1<br/>x==y<br/>x==z<br/>x is y<br/>x is z|
+|都是对对象进行比较判断作用的|对象比较判断的内容并不相同<br/>==是python标准操作符中的比较操作符，用来比较判断两个对象的value是否一致<br/> is也叫同一性运算符，用于判断对象的id是否相同<br/>is的相同的标准是更严苛的|x=y=[1, 1]<br/>z=[1, 1]<br/>print(x==y)<br/>print(x==z)<br/>print(x is y)<br/>print(x is z)<br/>x1=1<br/>x2=1<br/>print(x1 is x2)|
 
-综上，在我们平时只是比较值是否相同时，使用==，切忌用错
+上面的例句中，x is z 为True， 而x1 is x2 为False，这是什么原因呢？
+> 这个基础变量
+
+综上，在工作中，如果我们仅仅比较值是否相同，推荐使用"=="，以防止不必要的bug
 
 [NumPy 中文](https://www.numpy.org.cn/)
