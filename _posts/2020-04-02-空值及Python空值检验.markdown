@@ -21,7 +21,20 @@ tags:
 
 
 ## 二、空值检验(使用Python)
-> Python的Pandas库中，存在对整个Pandas对象判断，我们这里先讨论单个变量的空值检验。
+> 我们这里只讨论单个变量的空值检验，Python中，Pandas对象有针对整个对象的所有cell的空值检验函数，.isnull(), .isnull().any(), .isnull().all()
+
+1. 字符串的空值检验
+```
+string1 = ""
+string2 = " "
+
+print(string1 == "") # True
+print(string2 == "") # False
+
+```
+
+2. 数字的空值检验
+
 
 
 ## 三、空值处理(使用Python)
