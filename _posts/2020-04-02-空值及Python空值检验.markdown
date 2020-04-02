@@ -1,0 +1,28 @@
+---
+layout:     post
+title:      "空值及Python空值检测"
+subtitle:   "\"coding dayday\""
+date:       2020-04-2 20:00:00
+author:     "Weitu"
+header-img: "img/for-blog/null_value.jpg"
+catalog: true
+tags:
+    - Python
+
+---
+
+> 空值，在数据科学当中非常常见，空值在不同的语言环境下、不同的数据类型，空值的表现形式各异，因此空值检验的方法也各有不同。写这篇文章缘起在工作当中，需要对开发的一批变量进行数据校验。有一些变量的默认返回为NA，我在EXCEL中设计测试案例时，填入NA，但是读入python之后，单元格内容变为空，导致测试结果误报。
+
+## 一、什么是空值
+
+在我们的工作中，我们可以接触到各种各样空值的表示方法：
+- 字符型 ""
+- 数字型 Nan\Nat\None
+
+
+## 二、空值检验(使用Python)
+> Python的Pandas库中，存在对整个Pandas对象判断，我们这里先讨论单个变量的空值检验。
+
+
+## 三、空值处理(使用Python)
+## 四、总结
