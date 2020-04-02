@@ -1,14 +1,13 @@
 ---
 layout:     post
 title:      "Python动态变量及排列组合"
-subtitle:   " \"coding dayday""
+subtitle:   "\"coding dayday\""
 date:       2020-04-2 20:00:00
 author:     "Weitu"
 header-img: "img/for-blog/python.jpg"
 catalog: true
 tags:
     - Python
-    
 ---
 
 > 工作由偏模型转到了偏策略，代码写的较之前少，时有发生键盘跟不上自己的想法。离开代码的时间越久，越需要总结。
@@ -23,9 +22,67 @@ tags:
 1. exec动态赋值
 ```
 import random
+
+# 使用exec执行表达式，生成动态变量并为其赋值；使用时，也需要在exec中执行
+# 1. 定义变量并赋值
 for i in range(3):
     exec("dynamic_var_{}={}".format(i, random.randint(1, 100)))
+
+# 2.使用变量
+for i in range(3): # 换行
+    exec('print(dynamic_var_{})'.format(i))
+for i in range(3): # 不换行
+    exec('print(dynamic_var_{}, end=" ")'.format(i))
 ```
 2. 命名空间动态赋值
+> 在Python的命名空间中，将变量名与值存储在字典中，可以通过locals()，globals()函数分别获取局部命名空间和全局命名空间。
+```
+dynamic_vars = locals()
+# 1. 定义变量并赋值
+for i in range(3):
+    dynamic_vars["v_%d" %i] = random.randint(1, 100)
+    
+# 2.使用变量
+for i in range(3):
+    print(dynamic_vars["v_%d" %i])
+
+for i in range(3):
+    print(dynamic_vars.get(("v_%d" %i)), end=" ")
+```    
+
+
+> 总结：个人以为使用命名空间动态赋值更易用，代码更优雅
 
 ## 三、排列组合
+1. 在一个列表里面排列组合，可以使用python的内置包 itertools
+```
+from itertools import combinations, permutations
+
+lst = [1, 3, 6, 9]
+print(list(combinations(lst, 3)))
+print(list(permutations(lst, 3)))
+```
+
+2. 但是，如果我们要在不同的列表里面，一次抽且仅抽一个数出来，组成序列(模拟嵌套for)，显然上面是无法满足需要的，这也是<b>本篇文章需要解决的最大问题</b>。这里存在两个难点：
+- 事先不知道有几层for，根据传进来的字典确定，入参形如params_dict={"cnt_pboc_3d":[1, 10, 2]}， 表示指标，指标下界、上界、步长。
+- 事先不知道每一层for，上下界及步长
+
+> 好吧，码了很多代码，最后还是不敌python的一条语句，可以使用官方函数完美解决，即计算list的笛卡尔积 【人生苦短，我用Python】
+```
+from itertools import product
+
+print(len(list(product(["A1","A2","A3"],["B1","B2","B3"], ["C1", "C2"]))))
+print(list(product(["A1","A2","A3"],["B1","B2","B3"], ["C1", "C2"])))
+```
+
+
+## 四、总结
+
+| 函数 | 数学意义 | 解释 |
+| ------ | ------ | ------ |
+|product|笛卡尔积|有放回抽样排列|
+|permutations|排列|无放回抽样排列|
+|combinations|组合,没有重复|不放回抽样组合|
+|combinations_with_replacement|组合,有重复|有放回抽样组合|
+
+> [官网](https://docs.python.org/2/library/itertools.html)
