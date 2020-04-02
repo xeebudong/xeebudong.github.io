@@ -10,6 +10,7 @@ tags:
     - Python
 ---
 
+
 > 工作由偏模型转到了偏策略，代码写的较之前少，时有发生键盘跟不上自己的想法。离开代码的时间越久，越需要总结。
 
 ## 一、背景
@@ -20,6 +21,7 @@ tags:
 ## 二、动态变量
 
 1. exec动态赋值
+
 ```
 import random
 
@@ -34,6 +36,7 @@ for i in range(3): # 换行
 for i in range(3): # 不换行
     exec('print(dynamic_var_{}, end=" ")'.format(i))
 ```
+
 2. 命名空间动态赋值
 > 在Python的命名空间中，将变量名与值存储在字典中，可以通过locals()，globals()函数分别获取局部命名空间和全局命名空间。
 ```
@@ -48,12 +51,14 @@ for i in range(3):
 
 for i in range(3):
     print(dynamic_vars.get(("v_%d" %i)), end=" ")
-```    
 
+```    
 
 > 总结：个人以为使用命名空间动态赋值更易用，代码更优雅
 
+
 ## 三、排列组合
+
 1. 在一个列表里面排列组合，可以使用python的内置包 itertools
 ```
 from itertools import combinations, permutations
@@ -82,7 +87,7 @@ print(list(product(["A1","A2","A3"],["B1","B2","B3"], ["C1", "C2"])))
 | ------ | ------ | ------ |
 |product|笛卡尔积|有放回抽样排列|
 |permutations|排列|无放回抽样排列|
-|combinations|组合,没有重复|不放回抽样组合|
+|combinations|组合,没有重复|无放回抽样组合|
 |combinations_with_replacement|组合,有重复|有放回抽样组合|
 
-> [官网](https://docs.python.org/2/library/itertools.html)
+> [itertools官网](https://docs.python.org/2/library/itertools.html)
