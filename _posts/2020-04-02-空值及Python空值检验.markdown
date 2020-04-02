@@ -17,7 +17,9 @@ tags:
 
 在我们的工作中，我们可以接触到各种各样空值的表示方法：
 - 字符型 ""
-- 数字型 Nan\Nat\None
+- 数字型 None\np.nan\np.NaN\np.NAN
+> np.nan, represent of Not a Number, np.NaN and np.NAN are equivalent definitions of np.nan
+- 时间类型 Nat
 
 
 ## 二、空值检验(使用Python)
@@ -35,7 +37,27 @@ print(string2 == "") # False
 
 2. 数字的空值检验
 
+- isnan Test element-wise for NaN and return result as a boolean array
+
+
+3. 时间的空值检验
+- isnat Test element-wise for NaT (not a time) and return result as a boolean array
+
+
 
 
 ## 三、空值处理(使用Python)
 ## 四、总结
+
+## 番外
+> == vs is 在python中的区别
+
+1. python的对象包含三个要素：id-标识身份、type-数据类型、value-数据值
+2. == vs is 异同
+
+| 相同 |  差异 | 例举 |
+| ------ | ------ | ------ |
+|都是对对象进行比较判断作用的|对象比较判断的内容并不相同\n ==是python标准操作符中的比较操作符，用来比较判断两个对象的value是否一致\n is也叫同一性运算符，用于判断对象的id是否相同\nis的相同的标准是更严苛的|x=y=1\nz=1\x==y\nx==z\nx is y\nx is z|
+
+
+[NumPy 中文](https://www.numpy.org.cn/)
