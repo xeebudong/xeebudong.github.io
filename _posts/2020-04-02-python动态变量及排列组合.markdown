@@ -4,7 +4,7 @@ title:      "Python动态变量及排列组合"
 subtitle:   "\"coding dayday\""
 date:       2020-04-2 20:00:00
 author:     "Weitu"
-header-img: "img/for-blog/python.jpg"
+header-img: "img/for-blog/python.png"
 catalog: true
 tags:
     - Python
