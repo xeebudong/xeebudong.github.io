@@ -1,3 +1,17 @@
+---
+layout:     post
+title:      "SAS中COMPRESS用法详解"
+subtitle:   "\"coding dayday\""
+date:       2019-03-12 20:00:00
+author:     "Weitu"
+header-img: "img/for-blog/sas.jpg"
+catalog: true
+tags:
+    - SAS
+
+---
+
+
 # SAS COMPRESS用法
 
  > SAS中，我们一般用COMPRESS来对字符进行压缩，用以删除一些指定的字符，如空格和特殊符号，但C4OMPRESS的功能远不止如此。
