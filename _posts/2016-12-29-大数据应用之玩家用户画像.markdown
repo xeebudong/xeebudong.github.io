@@ -1,15 +1,13 @@
 ---
 layout:     post
-title:      "大数据应用之玩家用户画像V1.0"
+title:      "大数据应用之玩家用户画像"
 subtitle:   " \"Personas are a concrete representation of target users.\""
 date:       2016-12-29 16:16:25
 author:     "Weitu"
 header-img: "img/for-blog/persona-bar.jpg"
 catalog: true
 tags:
-    - 大数据
     - 用户画像
-    - 数学建模
 ---
 
 > 用户画像(Persona)，即标签化的用户行为特征，是一种勾勒目标用户、联系用户诉求与设计方向的有效工具，用户画像在电商领域、金融保险业得到了广泛的应用；
@@ -200,7 +198,7 @@ fpsubname
 ## 3.7 社交网络模型
 > [社交网络中用户影响力分析](http://wenku.baidu.com/link?url=TjnKEL5y4QLn5enm_665HA8b6mmxoHadPbTmtLmistFBfp-fdaouLllJbJpueC8XI2HHYKqMc1UVwQ3P-e7SwFTzTZQ7ksYYZfYlWya3ESm)
 
--  综合活跃分子
+- 综合活跃分子
 - 组局积极分子
 - 圈友达人
 - 路人
@@ -237,6 +235,3 @@ fpsubname
 5. [手把手教你搞定用户画像](http://weibo.com/p/2304181639e4ff60102x1th)
 6. [大数据下的用户分析及用户画像](http://wenku.baidu.com/link?url=qAzcMujCO5uhrhHh92Q83SJkLs1W6H78OXYk1gv3km2DFEAnr1w0v6sl2vOaeGhdeDN-kBOLYP6HQzNGezueA7Yj6bjmZaGaYGNUsAZq_2e)
 7. [基于用户画像的大数据挖掘实践](http://wenku.it168.com/d_001582701.shtml)
-
-
-  [1]: ./images/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B.png
