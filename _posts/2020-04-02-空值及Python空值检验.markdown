@@ -8,7 +8,6 @@ header-img: "img/for-blog/null_value.jpg"
 catalog: true
 tags:
     - Python
-
 ---
 
 > 空值，在数据科学当中非常常见，空值在不同的语言环境下、不同的数据类型，空值的表现形式各异，因此空值检验的方法也各有不同。写这篇文章缘起在工作当中，需要对开发的一批变量进行数据校验。有一些变量的默认返回为NA，我在EXCEL中设计测试案例时，填入NA，但是读入python之后，单元格内容变为空，导致测试结果误报。
@@ -19,8 +18,8 @@ tags:
 - 字符型 ""
 
 - 数字型 None\np.nan\np.NaN\np.NAN
-> np.nan, represent of Not a Number, np.NaN and np.NAN are equivalent definitions of np.nan
 
+  > np.nan, represent of Not a Number, np.NaN and np.NAN are equivalent definitions of np.nan
 - 时间类型 Nat， Not a Time
 
 
@@ -29,24 +28,23 @@ tags:
 
 1. 字符串的空值检验
 
-```
+```python
 string1 = ""
 string2 = " "
 
 print(string1 == "") # True
 print(string2 == "") # False
-
 ```
 
 2. 数字的空值检验
 
-- isnan Test element-wise for NaN and return result as a boolean array
+   > isnan Test element-wise for NaN and return result as a boolean array
 
 
 3. 时间的空值检验
-- isnat Test element-wise for NaT (not a time) and return result as a boolean array
 
-```
+   > isnat Test element-wise for NaT (not a time) and return result as a boolean array
+```python
 import numpy as np
 print(np.isnan(np.nan))               # True
 print(np.isnat(np.datetime64("NaT"))) # True
@@ -80,6 +78,8 @@ print(np.isnan(np.datetime64("NaT"))) # raise TypeError
 上面的例句中，x is z 为True， 而x1 is x2 为False，这是什么原因呢？
 > 在python中，对于不可变数据类型（如int、float、string）和可变数据类型(如list、dict)的存储机制是不一样的， 参考[这篇文章](https://blog.csdn.net/Com_ma/article/details/82156912)
 
-综上，在工作中，如果我们仅仅比较值是否相同，推荐使用"=="，以防止不必要的bug
+
+
+在工作中，如果我们仅仅比较值是否相同，推荐使用"=="，以防止不必要的bug
 
 [NumPy 中文](https://www.numpy.org.cn/)

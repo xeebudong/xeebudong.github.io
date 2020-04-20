@@ -8,7 +8,6 @@ header-img: "img/for-blog/sas.jpg"
 catalog: true
 tags:
     - SAS
-
 ---
 
 
@@ -45,16 +44,19 @@ COMPRESS(source <, characters><, modifier(s)>)
 ## 二．	用例
 
 1.	删除空格
+  
   默认情况下，COMPRESS用于删除字符串中所有位置的空格， 此外，还有一些函数用于去除字符串空格，略有不同，如STRIP去除字符串首尾的空格， TRIM删除字符串尾部的空格。
-2.	删除指定字符
-  COMPRESS，传入2个参数，则删除character中指定的字符。
-3.	使用修饰符删除指定字符
-  COMPRESS，传入3个参数，则删除character中指定的字符 + modifier中指定的字符（当modifier不为k）。
-4.	保留字符
-  COMPRESS， 传入3个参数，且modifier为k，则函数功能为保留character中指定的字符(删除除character中指定的字符以外的字符)。
+  
+2. 删除指定字符
+   COMPRESS，传入2个参数，则删除character中指定的字符。
 
-```
+3. 使用修饰符删除指定字符
+   COMPRESS，传入3个参数，则删除character中指定的字符 + modifier中指定的字符（当modifier不为k）。
 
+4. 保留字符
+   COMPRESS， 传入3个参数，且modifier为k，则函数功能为保留character中指定的字符(删除除character中指定的字符以外的字符)。
+
+```SAS
 DATA test;
 	c1 = COMPRESS(“ HELLO,  SAS2019!”); /* 默认删除，字符串中的所有空格*/
 	c2 = COMPRESS(“ HELLO,  SAS2019!”, “S!”); /* 指定被删除的字符S以及！*/
